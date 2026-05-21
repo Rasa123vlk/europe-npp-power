@@ -6,6 +6,9 @@ import bs4
 from bs4 import BeautifulSoup
 import datetime
 from datetime import datetime, timedelta, timezone
+from entsoe import EntsoePandasClient
+from entsoe import EntsoeRawClient
+import pandas as pd
 
 load_dotenv()
 
@@ -14,19 +17,35 @@ WEBHOOK_URL = getenv("WEBHOOK_URL")
 
 url = "https://web-api.tp.entsoe.eu/api"
 
-now = datetime.now(timezone.utc)
+Client = EntsoeRawClient(api_key=API_TOKEN)
+
+"""now = datetime.now(timezone.utc)
 
 start = now.replace(minute=0, second=0, microsecond=0)
 
-end = start - timedelta(hours=2)
-start = end - timedelta(hours=1)
+end = start - timedelta(hours=4)
+start = end - timedelta(hours=3)
 
 start = start.strftime('%Y%m%d%H%M')
-end = end.strftime('%Y%m%d%H%M')
+end = end.strftime('%Y%m%d%H%M')"""
 
-params = {
+
+now = datetime.now(timezone.utc)
+start = pd.Timestamp('20171201', tz='Europe/Brussels')
+end = pd.Timestamp('20180101', tz='Europe/Brussels')
+print(start)
+print(end)
+
+
+country_code = "CZ"
+
+#1045.30 (VARY) Temelín nominal
+#480.00 (VARY) Dukovany nominal
+
+
+"""params = {
     "securityToken": API_TOKEN,
-    "documentType": "A73",
+    "documentType": "A75",
     "processType": "A16",
     "in_Domain": "10YCZ-CEPS-----N", #27W-GU-EDUKB1, 27W-PU-EDUK----1 , 
     "registeredResource": "27W-GU-EDUKB1-4",
@@ -34,6 +53,10 @@ params = {
     "periodEnd": end
 }
 
-response = requests.get(url, params=params)
+response = requests.get(url, params=params)"""
 
-print(response.text)
+response = Client.query_generation_per_plant(country_code, start, end, psr_type=None)
+with open('outfile.xml', 'w') as f:
+    f.write(response)
+
+print("Data downloaded")
