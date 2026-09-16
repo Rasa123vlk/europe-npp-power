@@ -1,8 +1,26 @@
 {
-    "EDUK_B1____": "Dukovany 1",
-    "EDUK_B2____": "Dukovany 2",
-    "EDUK_B3____": "Dukovany 3",
-    "EDUK_B4____": "Dukovany 4",
-    "ETEM_G1____": "Temelín 1",
-    "ETEM_G2____": "Temelín 2"
+    "EDUK_B1____": {
+        "name": "Dukovany 1",
+        "nominal_power": 530
+    },
+    "EDUK_B2____": {
+        "name": "Dukovany 2",
+        "nominal_power": 530
+    },
+    "EDUK_B3____": {
+        "name": "Dukovany 3",
+        "nominal_power": 530
+    },
+    "EDUK_B4____": {
+        "name": "Dukovany 4",
+        "nominal_power": 530
+    },
+    "ETEM_G1____": {
+        "name": "Temelín 1",
+        "nominal_power": 1105
+    },
+    "ETEM_G2____": {
+        "name": "Temelín 2",
+        "nominal_power": 1105
+    }
 }

@@ -4,3 +4,5 @@ outfile.csv
 outfile.xml
 test.py
 europe-npp-power.code-workspace
+__pycache__/
+power-parser.py
