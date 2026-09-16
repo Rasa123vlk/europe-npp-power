@@ -5,6 +5,11 @@ from datetime import datetime, timedelta, timezone
 from entsoe import EntsoePandasClient
 import pandas as pd
 import requests
+import json
+
+# Loads unit real names
+with open("unit_dictionary.json", "r", encoding="utf-8") as file:
+    unit_names = json.load(file)
 
 load_dotenv()
 API_TOKEN = getenv("API_TOKEN")
@@ -45,6 +50,10 @@ timestamp = start
 
 print(gen_per_unit)
 df = gen_per_unit
+df = df.rename(
+    columns=lambda x: unit_names.get(x, x),
+    level=0
+)
 
 message = f"**Reactor production — {timestamp}**\n\n"
 
