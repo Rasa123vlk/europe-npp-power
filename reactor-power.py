@@ -8,14 +8,6 @@ import requests
 import json
 from colors import *
 
-# Loads unit real names and nominal power
-with open("unit_dictionary.json", "r", encoding="utf-8") as file:
-    unit_dictionary = json.load(file)
-def unit_dictionary_output(unit: str):
-    unit_names = unit_dictionary[unit]["name"]
-    nominal_power = unit_dictionary[unit]["nominal_power"]
-    return unit_names, nominal_power
-
 load_dotenv()
 API_TOKEN = getenv("API_TOKEN")
 WEBHOOK_URL = getenv("WEBHOOK_URL")
@@ -23,6 +15,15 @@ WEBHOOK_URL = getenv("WEBHOOK_URL")
 client = EntsoePandasClient(api_key=API_TOKEN)
 
 country_code = "CZ"
+
+# Loads unit real names and nominal power
+with open("unit_dictionary_new.json", "r", encoding="utf-8") as file:
+    unit_dictionary = json.load(file)
+    unit_dictionary = unit_dictionary[country_code]
+def unit_dictionary_output(unit: str):
+    unit_names = unit_dictionary[unit]["name"]
+    nominal_power = unit_dictionary[unit]["nominal_power"]
+    return unit_names, nominal_power
 
 def fetch_newest_data():
     cycle = 30 #set higher for testing
