@@ -6,10 +6,15 @@ from entsoe import EntsoePandasClient
 import pandas as pd
 import requests
 import json
+from colors import *
 
-# Loads unit real names
+# Loads unit real names and nominal power
 with open("unit_dictionary.json", "r", encoding="utf-8") as file:
-    unit_names = json.load(file)
+    unit_dictionary = json.load(file)
+def unit_dictionary_output(unit: str):
+    unit_names = unit_dictionary[unit]["name"]
+    nominal_power = unit_dictionary[unit]["nominal_power"]
+    return unit_names, nominal_power
 
 load_dotenv()
 API_TOKEN = getenv("API_TOKEN")
@@ -20,7 +25,7 @@ client = EntsoePandasClient(api_key=API_TOKEN)
 country_code = "CZ"
 
 def fetch_newest_data():
-    cycle = 0
+    cycle = 30 #set higher for testing
     while True:
         try:    
             now = datetime.now(timezone.utc)
@@ -50,18 +55,41 @@ timestamp = start
 
 print(gen_per_unit)
 df = gen_per_unit
-df = df.rename(
-    columns=lambda x: unit_names.get(x, x),
-    level=0
-)
-
-message = f"**Reactor production — {timestamp}**\n\n"
-
+#renames all columns accodrding to dictionary
+#start of message
+date_text = start.strftime("%d.%m.%Y")
+message = f"**Reactor power for {date_text}**\n"
+message += "```ansi\n"
 for unit in df.columns.get_level_values(0).unique():
     value = df.loc[timestamp, unit].iloc[0]
-    print(f"{unit}: {value} MW")
-    message += f"`{unit}`: **{value} MW**\n"
 
+    info = unit_dictionary_output(unit)
+
+    if info:
+        name = info[0]
+        nominal_power = info[1]
+    else:
+        name = unit
+        nominal_power = "Unknown"
+
+    if int(value) > 98:
+        power_color = COLOR_GREEN
+    elif int(value) < 1:
+        power_color = COLOR_RED
+    else:
+        power_color = COLOR_ORANGE
+
+    #advanced stuff
+    #bold_begin = COLOR_BOLD if changed else ""
+    #bold_end = f"{COLOR_RESET} {COLOR_CYAN}[prev: {previous_day_power}]{COLOR_RESET}" if changed else ""
+    
+    value = df.loc[timestamp, unit].iloc[0]
+    print(f"{unit}: {value} MW")
+    relativ_value = round(value / nominal_power * 100)
+    message += f"{COLOR_BLUE}{name}{COLOR_RESET}: {power_color}{value} MW ({relativ_value}%){COLOR_RESET}\n"
+
+# End of message
+message += "```"
 
 response = requests.post(
     WEBHOOK_URL,
