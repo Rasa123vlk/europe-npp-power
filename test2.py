@@ -13,7 +13,7 @@ WEBHOOK_URL = getenv("WEBHOOK_URL")
 client = EntsoePandasClient(api_key=API_TOKEN)
 
 now = datetime.now(timezone.utc)
-end = pd.Timestamp(now.replace(minute=0, second=0, microsecond=0) - timedelta(days=5))
+end = pd.Timestamp(now.replace(minute=0, second=0, microsecond=0) - timedelta(days=2))
 start = end - timedelta(hours=1)
 
 country_code = "CZ"
@@ -48,4 +48,5 @@ response = requests.post(
 
 print(response.status_code)
 
-#print(capacity_per_unit)
+# according to this, Dukovany are currently 530MW each and Temelín is 1105MW
+print(capacity_per_unit)

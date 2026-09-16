@@ -17,46 +17,41 @@ WEBHOOK_URL = getenv("WEBHOOK_URL")
 
 url = "https://web-api.tp.entsoe.eu/api"
 
-Client = EntsoeRawClient(api_key=API_TOKEN)
-
-"""now = datetime.now(timezone.utc)
-
-start = now.replace(minute=0, second=0, microsecond=0)
-
-end = start - timedelta(hours=4)
-start = end - timedelta(hours=3)
-
-start = start.strftime('%Y%m%d%H%M')
-end = end.strftime('%Y%m%d%H%M')"""
-
+client = EntsoePandasClient(api_key=API_TOKEN)
 
 now = datetime.now(timezone.utc)
-start = pd.Timestamp('20171201', tz='Europe/Brussels')
-end = pd.Timestamp('20180101', tz='Europe/Brussels')
+
+start = now - timedelta(hours=2)
+end = now - timedelta(hours=1)
+
+start = start.strftime("%Y%m%d%H00")
+end = end.strftime("%Y%m%d%H00")
+
 print(start)
 print(end)
 
-
 country_code = "CZ"
 
-#1045.30 (VARY) Temelín nominal
-#480.00 (VARY) Dukovany nominal
+#ETEM_G1__ Temelin
+#1085 / 1125 (VARY) Temelín nominal
+#27W-GU-EDUKB1--4 Dukovany U1
+#530.00 (VARY) Dukovany nominal
 
 
-"""params = {
+payload = {
     "securityToken": API_TOKEN,
-    "documentType": "A75",
+    "documentType": "A73",
     "processType": "A16",
-    "in_Domain": "10YCZ-CEPS-----N", #27W-GU-EDUKB1, 27W-PU-EDUK----1 , 
-    "registeredResource": "27W-GU-EDUKB1-4",
-    "periodStart": start,
-    "periodEnd": end
+    "in_Domain": "10YCZ-CEPS-----N",
+    "periodStart": "202605281100",
+    "periodEnd": "202605281200",
 }
 
-response = requests.get(url, params=params)"""
+response = requests.get(url, params=payload)
 
-response = Client.query_generation_per_plant(country_code, start, end, psr_type=None)
+print(response.text)
+
 with open('outfile.xml', 'w') as f:
-    f.write(response)
+    f.write(response.text)
 
 print("Data downloaded")
