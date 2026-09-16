@@ -1,0 +1,454 @@
+{
+    "BE": {
+        "DOEL 4": {
+            "name": "DOEL 4",
+            "nominal_power": null
+        },
+        "TIHANGE 3": {
+            "name": "TIHANGE 3",
+            "nominal_power": null
+        }
+    },
+    "BG": {
+        "NPP KZL G10": {
+            "name": "NPP KZL G10",
+            "nominal_power": null
+        },
+        "NPP KZL G9": {
+            "name": "NPP KZL G9",
+            "nominal_power": null
+        }
+    },
+    "CH": {
+        "Beznau 1": {
+            "name": "Beznau 1",
+            "nominal_power": null
+        },
+        "Beznau 2": {
+            "name": "Beznau 2",
+            "nominal_power": null
+        },
+        "Kernkraftwerk Gösgen": {
+            "name": "Kernkraftwerk Gösgen",
+            "nominal_power": null
+        },
+        "Leibstadt": {
+            "name": "Leibstadt",
+            "nominal_power": null
+        }
+    },
+    "CZ": {
+        "EDUK_B1____": {
+            "name": "Dukovany 1",
+            "nominal_power": 530
+        },
+        "EDUK_B2____": {
+            "name": "Dukovany 2",
+            "nominal_power": 530
+        },
+        "EDUK_B3____": {
+            "name": "Dukovany 3",
+            "nominal_power": 530
+        },
+        "EDUK_B4____": {
+            "name": "Dukovany 4",
+            "nominal_power": 530
+        },
+        "ETEM_G1____": {
+            "name": "Temelín 1",
+            "nominal_power": 1105
+        },
+        "ETEM_G2____": {
+            "name": "Temelín 2",
+            "nominal_power": 1105
+        }
+    },
+    "ES": {
+        "ALMARAZ 1": {
+            "name": "ALMARAZ 1",
+            "nominal_power": null
+        },
+        "ALMARAZ 2": {
+            "name": "ALMARAZ 2",
+            "nominal_power": null
+        },
+        "ASCO 1": {
+            "name": "ASCO 1",
+            "nominal_power": null
+        },
+        "ASCO 2": {
+            "name": "ASCO 2",
+            "nominal_power": null
+        },
+        "COFRENTES": {
+            "name": "COFRENTES",
+            "nominal_power": null
+        },
+        "TRILLO": {
+            "name": "TRILLO",
+            "nominal_power": null
+        },
+        "VANDELLOS": {
+            "name": "VANDELLOS",
+            "nominal_power": null
+        }
+    },
+    "FI": {
+        "Loviisa 1 G11": {
+            "name": "Loviisa 1 G11",
+            "nominal_power": null
+        },
+        "Loviisa 1 G12": {
+            "name": "Loviisa 1 G12",
+            "nominal_power": null
+        },
+        "Loviisa 2 G21": {
+            "name": "Loviisa 2 G21",
+            "nominal_power": null
+        },
+        "Loviisa 2 G22": {
+            "name": "Loviisa 2 G22",
+            "nominal_power": null
+        },
+        "Olkiluoto 1 B1": {
+            "name": "Olkiluoto 1 B1",
+            "nominal_power": null
+        },
+        "Olkiluoto 2 B2": {
+            "name": "Olkiluoto 2 B2",
+            "nominal_power": null
+        },
+        "Olkiluoto 3 B3": {
+            "name": "Olkiluoto 3 B3",
+            "nominal_power": null
+        }
+    },
+    "FR": {
+        "BELLEVILLE 1": {
+            "name": "BELLEVILLE 1",
+            "nominal_power": null
+        },
+        "BELLEVILLE 2": {
+            "name": "BELLEVILLE 2",
+            "nominal_power": null
+        },
+        "BLAYAIS 1": {
+            "name": "BLAYAIS 1",
+            "nominal_power": null
+        },
+        "BLAYAIS 2": {
+            "name": "BLAYAIS 2",
+            "nominal_power": null
+        },
+        "BLAYAIS 3": {
+            "name": "BLAYAIS 3",
+            "nominal_power": null
+        },
+        "BLAYAIS 4": {
+            "name": "BLAYAIS 4",
+            "nominal_power": null
+        },
+        "BUGEY 2": {
+            "name": "BUGEY 2",
+            "nominal_power": null
+        },
+        "BUGEY 3": {
+            "name": "BUGEY 3",
+            "nominal_power": null
+        },
+        "BUGEY 4": {
+            "name": "BUGEY 4",
+            "nominal_power": null
+        },
+        "BUGEY 5": {
+            "name": "BUGEY 5",
+            "nominal_power": null
+        },
+        "CATTENOM 1": {
+            "name": "CATTENOM 1",
+            "nominal_power": null
+        },
+        "CATTENOM 2": {
+            "name": "CATTENOM 2",
+            "nominal_power": null
+        },
+        "CATTENOM 3": {
+            "name": "CATTENOM 3",
+            "nominal_power": null
+        },
+        "CATTENOM 4": {
+            "name": "CATTENOM 4",
+            "nominal_power": null
+        },
+        "CHINON 1": {
+            "name": "CHINON 1",
+            "nominal_power": null
+        },
+        "CHINON 2": {
+            "name": "CHINON 2",
+            "nominal_power": null
+        },
+        "CHINON 3": {
+            "name": "CHINON 3",
+            "nominal_power": null
+        },
+        "CHINON 4": {
+            "name": "CHINON 4",
+            "nominal_power": null
+        },
+        "CHOOZ 1": {
+            "name": "CHOOZ 1",
+            "nominal_power": null
+        },
+        "CHOOZ 2": {
+            "name": "CHOOZ 2",
+            "nominal_power": null
+        },
+        "CIVAUX 1": {
+            "name": "CIVAUX 1",
+            "nominal_power": null
+        },
+        "CIVAUX 2": {
+            "name": "CIVAUX 2",
+            "nominal_power": null
+        },
+        "CRUAS 1": {
+            "name": "CRUAS 1",
+            "nominal_power": null
+        },
+        "CRUAS 2": {
+            "name": "CRUAS 2",
+            "nominal_power": null
+        },
+        "CRUAS 3": {
+            "name": "CRUAS 3",
+            "nominal_power": null
+        },
+        "CRUAS 4": {
+            "name": "CRUAS 4",
+            "nominal_power": null
+        },
+        "DAMPIERRE 1": {
+            "name": "DAMPIERRE 1",
+            "nominal_power": null
+        },
+        "DAMPIERRE 2": {
+            "name": "DAMPIERRE 2",
+            "nominal_power": null
+        },
+        "DAMPIERRE 3": {
+            "name": "DAMPIERRE 3",
+            "nominal_power": null
+        },
+        "DAMPIERRE 4": {
+            "name": "DAMPIERRE 4",
+            "nominal_power": null
+        },
+        "FLAMANVILLE 1": {
+            "name": "FLAMANVILLE 1",
+            "nominal_power": null
+        },
+        "FLAMANVILLE 2": {
+            "name": "FLAMANVILLE 2",
+            "nominal_power": null
+        },
+        "FLAMANVILLE 3": {
+            "name": "FLAMANVILLE 3",
+            "nominal_power": null
+        },
+        "GOLFECH 1": {
+            "name": "GOLFECH 1",
+            "nominal_power": null
+        },
+        "GOLFECH 2": {
+            "name": "GOLFECH 2",
+            "nominal_power": null
+        },
+        "GRAVELINES 1": {
+            "name": "GRAVELINES 1",
+            "nominal_power": null
+        },
+        "GRAVELINES 2": {
+            "name": "GRAVELINES 2",
+            "nominal_power": null
+        },
+        "GRAVELINES 3": {
+            "name": "GRAVELINES 3",
+            "nominal_power": null
+        },
+        "GRAVELINES 4": {
+            "name": "GRAVELINES 4",
+            "nominal_power": null
+        },
+        "GRAVELINES 5": {
+            "name": "GRAVELINES 5",
+            "nominal_power": null
+        },
+        "GRAVELINES 6": {
+            "name": "GRAVELINES 6",
+            "nominal_power": null
+        },
+        "NOGENT 1": {
+            "name": "NOGENT 1",
+            "nominal_power": null
+        },
+        "NOGENT 2": {
+            "name": "NOGENT 2",
+            "nominal_power": null
+        },
+        "PALUEL 1": {
+            "name": "PALUEL 1",
+            "nominal_power": null
+        },
+        "PALUEL 2": {
+            "name": "PALUEL 2",
+            "nominal_power": null
+        },
+        "PALUEL 3": {
+            "name": "PALUEL 3",
+            "nominal_power": null
+        },
+        "PALUEL 4": {
+            "name": "PALUEL 4",
+            "nominal_power": null
+        },
+        "PENLY 1": {
+            "name": "PENLY 1",
+            "nominal_power": null
+        },
+        "PENLY 2": {
+            "name": "PENLY 2",
+            "nominal_power": null
+        },
+        "ST ALBAN 1": {
+            "name": "ST ALBAN 1",
+            "nominal_power": null
+        },
+        "ST ALBAN 2": {
+            "name": "ST ALBAN 2",
+            "nominal_power": null
+        },
+        "ST LAURENT 1": {
+            "name": "ST LAURENT 1",
+            "nominal_power": null
+        },
+        "ST LAURENT 2": {
+            "name": "ST LAURENT 2",
+            "nominal_power": null
+        },
+        "TRICASTIN 1": {
+            "name": "TRICASTIN 1",
+            "nominal_power": null
+        },
+        "TRICASTIN 2": {
+            "name": "TRICASTIN 2",
+            "nominal_power": null
+        },
+        "TRICASTIN 3": {
+            "name": "TRICASTIN 3",
+            "nominal_power": null
+        },
+        "TRICASTIN 4": {
+            "name": "TRICASTIN 4",
+            "nominal_power": null
+        }
+    },
+    "HU": {
+        "PA_gép1": {
+            "name": "PA_gép1",
+            "nominal_power": null
+        },
+        "PA_gép2": {
+            "name": "PA_gép2",
+            "nominal_power": null
+        },
+        "PA_gép3": {
+            "name": "PA_gép3",
+            "nominal_power": null
+        },
+        "PA_gép4": {
+            "name": "PA_gép4",
+            "nominal_power": null
+        },
+        "PA_gép5": {
+            "name": "PA_gép5",
+            "nominal_power": null
+        },
+        "PA_gép6": {
+            "name": "PA_gép6",
+            "nominal_power": null
+        },
+        "PA_gép7": {
+            "name": "PA_gép7",
+            "nominal_power": null
+        },
+        "PA_gép8": {
+            "name": "PA_gép8",
+            "nominal_power": null
+        }
+    },
+    "NL": {
+        "Borssele 30": {
+            "name": "Borssele 30",
+            "nominal_power": null
+        }
+    },
+    "RO": {
+        "CNE__U1_RET_CA": {
+            "name": "CNE__U1_RET_CA",
+            "nominal_power": null
+        },
+        "CNE__U2_RET_CA": {
+            "name": "CNE__U2_RET_CA",
+            "nominal_power": null
+        }
+    },
+    "SI": {
+        "NE Krško SLO": {
+            "name": "NE Krško SLO",
+            "nominal_power": null
+        }
+    },
+    "SK": {
+        "Bohunice TG31": {
+            "name": "Bohunice 3 TG 1",
+            "nominal_power": 252.5
+        },
+        "Bohunice TG32": {
+            "name": "Bohunice 3 TG 2",
+            "nominal_power": 252.5
+        },
+        "Bohunice TG41": {
+            "name": "Bohunice 4 TG 1",
+            "nominal_power": 252.5
+        },
+        "Bohunice TG42": {
+            "name": "Bohunice 4 TG 2",
+            "nominal_power": 252.5
+        },
+        "Mochovce TG11": {
+            "name": "Mochovce 1 TG 1",
+            "nominal_power": 250
+        },
+        "Mochovce TG12": {
+            "name": "Mochovce 1 TG 2",
+            "nominal_power": 250
+        },
+        "Mochovce TG21": {
+            "name": "Mochovce 2 TG 1",
+            "nominal_power": 250
+        },
+        "Mochovce TG22": {
+            "name": "Mochovce 2 TG 2",
+            "nominal_power": 250
+        },
+        "Mochovce TG31": {
+            "name": "Mochovce 3 TG 1",
+            "nominal_power": 235.5
+        },
+        "Mochovce TG32": {
+            "name": "Mochovce 3 TG 2",
+            "nominal_power": 235.5
+        }
+    }
+}
