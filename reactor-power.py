@@ -28,7 +28,7 @@ def unit_dictionary_output(country: str, unit: str):
 def fetch_newest_data():
     generation_data = {}
     for countries in country_code:
-        cycle = 30 #set higher for testing
+        cycle = 0 #set higher for testing
         while True:
             try:    
                 now = datetime.now(timezone.utc)
@@ -71,8 +71,9 @@ for countries in country_code:
     df = gen_per_unit
     #renames all columns accodrding to dictionary
     #start of message
+    country = countries.lower()
     date_text = start.strftime("%d.%m.%Y")
-    message = f"**Reactor power for {countries} on {date_text}**\n"
+    message = f"**Reactor power for {countries} :flag_{country}: on {date_text}**\n"
     message += "```ansi\n"
     for unit in df.columns.get_level_values(0).unique():
         value = df.loc[timestamp, unit].iloc[0]
