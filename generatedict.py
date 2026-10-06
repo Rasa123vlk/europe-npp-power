@@ -16,6 +16,7 @@ client = EntsoePandasClient(api_key=API_TOKEN)
 
 # ENTSO-E country/control-area codes
 COUNTRIES = [
+    "GB",   # Great britain
     "AL",  # Albania
     "AT",  # Austria
     "BA",  # Bosnia and Herzegovina
