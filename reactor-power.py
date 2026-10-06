@@ -14,7 +14,7 @@ WEBHOOK_URL = getenv("WEBHOOK_URL")
 
 client = EntsoePandasClient(api_key=API_TOKEN)
 
-country_code = {"CZ", "SK"}
+country_code = {"CZ", "SK", "FR",}
 
 # Loads unit real names and nominal power
 
@@ -28,7 +28,7 @@ def unit_dictionary_output(country: str, unit: str):
 def fetch_newest_data():
     generation_data = {}
     for countries in country_code:
-        cycle = 30 #set higher for testing
+        cycle = 0 #set higher for testing
         while True:
             try:    
                 now = datetime.now(timezone.utc)
@@ -71,37 +71,47 @@ for countries in country_code:
     df = gen_per_unit
     #renames all columns accodrding to dictionary
     #start of message
+    country = countries.lower()
     date_text = start.strftime("%d.%m.%Y")
-    message = f"**Reactor power for {countries} on {date_text}**\n"
+    message = f"**Reactor power for {countries} :flag_{country}: on {date_text}**\n"
     message += "```ansi\n"
     for unit in df.columns.get_level_values(0).unique():
         value = df.loc[timestamp, unit].iloc[0]
-
-        info = unit_dictionary_output(countries, unit)
-
-        if info:
+            
+        try:
+            info = unit_dictionary_output(countries, unit)
             name = info[0]
             nominal_power = info[1]
-        else:
-            name = unit
-            nominal_power = "Unknown"
 
-        if int(value) > 98:
-            power_color = COLOR_GREEN
-        elif int(value) < 1:
-            power_color = COLOR_RED
-        else:
-            power_color = COLOR_ORANGE
+            if nominal_power is not None:
+                relativ_value = round(value / nominal_power * 100)
 
-        #advanced stuff
-        #bold_begin = COLOR_BOLD if changed else ""
-        #bold_end = f"{COLOR_RESET} {COLOR_CYAN}[prev: {previous_day_power}]{COLOR_RESET}" if changed else ""
-        
-        value = df.loc[timestamp, unit].iloc[0]
-        print(f"{unit}: {value} MW")
-        relativ_value = round(value / nominal_power * 100)
-        message += f"{COLOR_BLUE}{name}{COLOR_RESET}: {power_color}{value} MW ({relativ_value}%){COLOR_RESET}\n"
+                if relativ_value > 80:
+                    power_color = COLOR_GREEN
+                elif relativ_value < 5:
+                    power_color = COLOR_RED
+                else:
+                    power_color = COLOR_ORANGE
 
+                message += (
+                    f"{COLOR_BLUE}{name}{COLOR_RESET}: "
+                    f"{power_color}{value} MW ({relativ_value}%){COLOR_RESET}\n"
+                )
+
+            else:
+                print(f"{unit}: nominal power is not defined")
+                message += (
+                    f"{COLOR_BLUE}{name}{COLOR_RESET}: "
+                    f"{value} MW\n"
+                )
+
+        except Exception as e:
+            print(f"{unit} not found in dictionary: {e}")
+            message += (
+                f"{COLOR_BLUE}{unit}{COLOR_RESET}: "
+                f"{value} MW\n"
+            )
+            
     # End of message
     message += "```"
 
